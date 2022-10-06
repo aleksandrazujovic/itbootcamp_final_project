@@ -1,12 +1,12 @@
 package tests;
 
+import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import pages.HomePage;
-import pages.LoginPage;
+import pages.*;
 
 import java.time.Duration;
 
@@ -17,6 +17,9 @@ public abstract class BaseTestPage {
     private LoginPage loginPage;
     private TestLogin testLogin;
     private HomePage homePage;
+    private SignUpPage signUpPage;
+    private AdminCities adminCities;
+    private Locale locale;
 
 
     public WebDriver getDriver(){
@@ -29,6 +32,13 @@ public abstract class BaseTestPage {
     public LoginPage getLoginPage(){
         return loginPage;
     }
+    public SignUpPage getSignUpPage(){
+        return signUpPage;
+    }
+    public AdminCities getAdminCities(){
+        return adminCities;
+    }
+    public Locale getLocale(){return locale;}
 
     @BeforeClass
     public void setup() {
@@ -37,7 +47,9 @@ public abstract class BaseTestPage {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
-
+        signUpPage = new SignUpPage(driver);
+        adminCities = new AdminCities(driver);
+        locale = new Locale(driver);
 
     }
 

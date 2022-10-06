@@ -38,10 +38,59 @@ public class TestLogin extends BaseTestPage{
         String expectedResult = "User does not exists";
         getHomePage().goToLogInPage();
         getLoginPage().logInWithFaker();
-        String actualResult = getLoginPage().getMessage().getText();
+        String actualResult = getLoginPage().getMessageUserDoesNotExist().getText();
         Assert.assertEquals(actualResult,expectedResult);
+
+        String expectedResult1 = "https://vue-demo.daniel-avellaneda.com/login";
+        String actualResult1 = getDriver().getCurrentUrl();
+        Assert.assertEquals(actualResult1,expectedResult1);
     }
 
+    @Test
+    public void errorsWithValidEmailInvalidPass(){
+        String expectedResult = "Wrong password";
+        getHomePage().goToLogInPage();
+        getLoginPage().logInWithValidEmailInvalidPass("admin@admin.com");
+        String actualResult = getLoginPage().getMessageWrongPass().getText();
+        Assert.assertEquals(actualResult,expectedResult);
+
+        String expectedResult1 = "https://vue-demo.daniel-avellaneda.com/login";
+        String actualResult1 = getDriver().getCurrentUrl();
+        Assert.assertEquals(actualResult1,expectedResult1);
+    }
+
+    @Test
+    public void loginWithValidData() throws InterruptedException {
+        String expectedResult = "/home";
+        getHomePage().goToLogInPage();
+        getLoginPage().logInHappyFlow("admin@admin.com","12345");
+        Thread.sleep(1000);
+        String actualResult = getLoginPage().getDriver().getCurrentUrl();
+        Assert.assertTrue(actualResult.contains(expectedResult));
+        getHomePage().logOut();
+    }
+
+
+    @Test
+    public void logOut(){
+        getHomePage().goToLogInPage();
+        getLoginPage().logInHappyFlow("admin@admin.com","12345");
+        boolean expectedResult1 = true;
+        boolean actualResult1 = getHomePage().getLogOutBtn().isDisplayed();
+        Assert.assertEquals(expectedResult1,actualResult1);
+
+        getHomePage().logOut();
+
+        String expectedResult2 = "/login";
+        String actualResult2 = getLoginPage().getDriver().getCurrentUrl();
+        Assert.assertTrue(actualResult2.contains(expectedResult2));
+
+        getDriver().get("https://vue-demo.daniel-avellaneda.com/home");
+        String expectedResult3 = "/login";
+        String actualResult3 = getLoginPage().getDriver().getCurrentUrl();
+        Assert.assertTrue(actualResult3.contains(expectedResult3));
+
+    }
 
 
 
