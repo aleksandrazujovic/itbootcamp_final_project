@@ -3,7 +3,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 
 public class HomePage extends BasePage {
@@ -13,6 +14,8 @@ public class HomePage extends BasePage {
 
     private By signUpBtn = By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/a[4]");
     private By adminBtn = By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/button[1]");
+    private By citiesBtn = By.className("btnAdminCities");
+    private By header = By.xpath("//*[@id=\"app\"]/div/div/header/div");
 
 
 
@@ -25,13 +28,20 @@ public class HomePage extends BasePage {
     public WebElement getGoToLogin(){
         return getDriver().findElement(goToLogin);
     }
+    public WebElement getLogOutBtn(){
+        return getDriver().findElement(LogOutBtn);
+    }
+    public WebElement getCitiesBtn(){
+        return getDriver().findElement(citiesBtn);
+    }
+    public List<WebElement> getHeader(){
+        return getDriver().findElements(header);
+    }
 
     public void goToLogInPage(){
         getGoToLogin().click();
     }
-    public WebElement getLogOutBtn(){
-        return getDriver().findElement(LogOutBtn);
-    }
+
 
     public void logOut(){
         getLogOutBtn().click();
@@ -44,11 +54,11 @@ public class HomePage extends BasePage {
         getSignUpBtn().click();
     }
 
-    public void goToCities(){
+    public void goToCities() throws InterruptedException {
         getAdminBtn().click();
-        Select drpCities = new Select(getAdminBtn());
-        String cities = getDriver().findElement(By.xpath("//*[@id=\"list-item-155\"]")).getText();
-        drpCities.selectByVisibleText(cities);
+        Thread.sleep(2000);
+        getCitiesBtn().click();
+
     }
 
 

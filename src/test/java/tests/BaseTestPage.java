@@ -1,14 +1,18 @@
 package tests;
 
+import jdk.internal.dynalink.linker.LinkerServices;
 import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.*;
 
 import java.time.Duration;
+import java.util.List;
 
 public abstract class BaseTestPage {
 
@@ -60,8 +64,18 @@ public abstract class BaseTestPage {
     @BeforeMethod
     public void beforeMethod(){
         driver.get("https://vue-demo.daniel-avellaneda.com");
+        driver.manage().window().maximize();
     }
+   // @AfterMethod
+   // public void afterMethod(){
+       // List<WebElement> header = getHomePage().getHeader();
+       // for (int i = 0; i < header.size(); i++){
+           // if( header.get(i).getText().equals("LOGOUT")) {
+             //   getAdminCities().getLogOutBtn().click();
+           // }
+       // }
 
+   // }
     @AfterClass
     public void afterClass(){
      //   driver.quit();
