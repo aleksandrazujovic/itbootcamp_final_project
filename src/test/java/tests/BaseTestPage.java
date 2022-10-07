@@ -24,6 +24,7 @@ public abstract class BaseTestPage {
     private SignUpPage signUpPage;
     private AdminCities adminCities;
     private Locale locale;
+    private EditProfile editProfile;
 
 
     public WebDriver getDriver(){
@@ -43,6 +44,9 @@ public abstract class BaseTestPage {
         return adminCities;
     }
     public Locale getLocale(){return locale;}
+    public EditProfile getEditProfile(){
+        return editProfile;
+    }
 
     @BeforeClass
     public void setup() {
@@ -54,7 +58,7 @@ public abstract class BaseTestPage {
         signUpPage = new SignUpPage(driver);
         adminCities = new AdminCities(driver);
         locale = new Locale(driver);
-
+        editProfile = new EditProfile(driver);
     }
 
     public void baseUrl() {

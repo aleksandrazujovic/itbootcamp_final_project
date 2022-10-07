@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d22373b6-bf6e-4f05-8d2e-f57433402804" name="Changes" comment="New tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/AdminCities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AdminCities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/Locale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/Locale.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTestPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTestPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestAdminCities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestAdminCities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestLocale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestLocale.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,24 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.TestAuthRoutes">
-    <configuration name="TestAdminCities" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="itbootcamp_final_project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.TestAdminCities" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.TestEditProfile.editProfile">
     <configuration name="TestAuthRoutes" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="itbootcamp_final_project" />
       <extension name="coverage">
@@ -98,7 +78,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAuthRoutes.visitsToHome" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestEditProfile.editProfile" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="itbootcamp_final_project" />
       <extension name="coverage">
         <pattern>
@@ -107,8 +87,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.TestAuthRoutes" />
-      <option name="METHOD_NAME" value="visitsToHome" />
+      <option name="MAIN_CLASS_NAME" value="tests.TestEditProfile" />
+      <option name="METHOD_NAME" value="editProfile" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -116,7 +96,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAuthRoutes.visitsToProfile" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestLocale" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="itbootcamp_final_project" />
       <extension name="coverage">
         <pattern>
@@ -125,8 +105,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.TestAuthRoutes" />
-      <option name="METHOD_NAME" value="visitsToProfile" />
+      <option name="MAIN_CLASS_NAME" value="tests.TestLocale" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestLocale.setES" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="itbootcamp_final_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.TestLocale" />
+      <option name="METHOD_NAME" value="setES" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -136,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestEditProfile.editProfile" />
+        <item itemvalue="TestNG.TestLocale" />
+        <item itemvalue="TestNG.TestLocale.setES" />
         <item itemvalue="TestNG.TestAuthRoutes" />
         <item itemvalue="TestNG.TestAuthRoutes.visitsToAdminUsers" />
-        <item itemvalue="TestNG.TestAuthRoutes.visitsToProfile" />
-        <item itemvalue="TestNG.TestAuthRoutes.visitsToHome" />
-        <item itemvalue="TestNG.TestAdminCities" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665082051889</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="New tests">
+      <created>1665167747735</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665167747735</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

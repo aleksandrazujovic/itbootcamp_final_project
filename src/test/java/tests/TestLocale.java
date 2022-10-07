@@ -12,5 +12,20 @@ public class TestLocale extends BaseTestPage{
     String actualResult = getLocale().getEsText().getText();
     Assert.assertEquals(actualResult,expectedResult);
 }
+@Test
+    public void setEN() throws InterruptedException {
+    String expectedResult = "Landing";
+    getLocale().setEN();
+    String actualResult = getLocale().getEsText().getText();
+    Assert.assertEquals(actualResult,expectedResult);
+}
+@Test
+    public void setFR() throws InterruptedException {
+    String expectedResult = "Page d'atterrissage";
+    getLocale().setFR();
+    String actualResult = getLocale().getEsText().getText();
+    Assert.assertEquals(actualResult,expectedResult);
+}
+
 
 }
