@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AdminCities extends BasePage {
 
@@ -18,44 +19,56 @@ public class AdminCities extends BasePage {
     private By searchField = By.xpath("//*[@id=\"search\"]");
     private By deleteBtn = By.xpath("//*[@id=\"delete\"]");
     private By finalDeleteBtn = By.xpath("//*[@id=\"app\"]/div[5]/div/div/div[2]/button[2]");
-    public AdminCities(WebDriver driver) {
-        super(driver);
+
+    public AdminCities(WebDriver driver, WebDriverWait driverWait) {
+        super(driver, driverWait);
     }
 
-    public WebElement getLogOutBtn(){
+    public WebElement getLogOutBtn() {
         return getDriver().findElement(logOutBtn);
     }
-    public WebElement getNewItemBtn(){
+
+    public WebElement getNewItemBtn() {
         return getDriver().findElement(newItemBtn);
     }
-    public WebElement getNameField(){
+
+    public WebElement getNameField() {
         return getDriver().findElement(nameField);
     }
-    public WebElement getSaveBtn(){
+
+    public WebElement getSaveBtn() {
         return getDriver().findElement(saveBtn);
     }
-    public WebElement getSaveMessage(){
+
+    public WebElement getSaveMessage() {
         return getDriver().findElement(saveMessage);
     }
-    public WebElement getEditBtn(){
+
+    public WebElement getEditBtn() {
         return getDriver().findElement(editBtn);
     }
-    public WebElement getEditField(){
+
+    public WebElement getEditField() {
         return getDriver().findElement(editField);
     }
-    public WebElement getFirstRow(){
+
+    public WebElement getFirstRow() {
         return getDriver().findElement(firstRow);
     }
-    public WebElement getSearchField(){
+
+    public WebElement getSearchField() {
         return getDriver().findElement(searchField);
     }
-    public WebElement getDeleteBtn(){
+
+    public WebElement getDeleteBtn() {
         return getDriver().findElement(deleteBtn);
     }
-    public WebElement getFinalDeleteBtn(){
+
+    public WebElement getFinalDeleteBtn() {
         return getDriver().findElement(finalDeleteBtn);
     }
-    public void createNewItem(String name){
+
+    public void createNewItem(String name) {
         getNewItemBtn().click();
         getNameField().sendKeys(name);
         getSaveBtn().click();

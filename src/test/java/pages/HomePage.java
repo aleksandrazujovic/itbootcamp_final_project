@@ -3,7 +3,9 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 
@@ -18,39 +20,44 @@ public class HomePage extends BasePage {
     private By header = By.xpath("//*[@id=\"app\"]/div/div/header/div");
 
 
-
-    public HomePage(WebDriver driver) {
-        super(driver);
+    public HomePage(WebDriver driver, WebDriverWait driverWait) {
+        super(driver, driverWait);
     }
-    public WebElement getAdminBtn(){
+
+    public WebElement getAdminBtn() {
         return getDriver().findElement(adminBtn);
     }
-    public WebElement getGoToLogin(){
+
+    public WebElement getGoToLogin() {
         return getDriver().findElement(goToLogin);
     }
-    public WebElement getLogOutBtn(){
+
+    public WebElement getLogOutBtn() {
         return getDriver().findElement(LogOutBtn);
     }
-    public WebElement getCitiesBtn(){
+
+    public WebElement getCitiesBtn() {
         return getDriver().findElement(citiesBtn);
     }
-    public List<WebElement> getHeader(){
+
+    public List<WebElement> getHeader() {
         return getDriver().findElements(header);
     }
 
-    public void goToLogInPage(){
+    public void goToLogInPage() {
         getGoToLogin().click();
     }
 
 
-    public void logOut(){
+    public void logOut() {
         getLogOutBtn().click();
     }
-    public WebElement getSignUpBtn(){
+
+    public WebElement getSignUpBtn() {
         return getDriver().findElement(signUpBtn);
     }
 
-    public void goToSignUp(){
+    public void goToSignUp() {
         getSignUpBtn().click();
     }
 
@@ -60,7 +67,6 @@ public class HomePage extends BasePage {
         getCitiesBtn().click();
 
     }
-
 
 
 }

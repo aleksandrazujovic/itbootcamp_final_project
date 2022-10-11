@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignUpPage extends  BasePage{
 
@@ -16,8 +17,8 @@ public class SignUpPage extends  BasePage{
 
     private By errorMessage = By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[3]/div/div/div/div/div[1]/ul");
     private By importantMessage = By.xpath("//*[@id=\"app\"]/div[4]/div/div/div[1]");
-    public SignUpPage(WebDriver driver) {
-        super(driver);
+    public SignUpPage(WebDriver driver, WebDriverWait driverWait) {
+        super(driver, driverWait);
     }
     public WebElement getImportantMessage(){
         return getDriver().findElement(importantMessage);
@@ -56,9 +57,8 @@ public class SignUpPage extends  BasePage{
     }
 
     public void signUpValidData(String name, String password, String confirmPass){
-        Faker faker = new Faker();
         getNameField().sendKeys(name);
-        getEmailField().sendKeys(faker.internet().emailAddress());
+        getEmailField().sendKeys(getFaker().internet().emailAddress());
         getPasswordField().sendKeys(password);
         getConfirmPassField().sendKeys(confirmPass);
         getSignUpBtn().click();

@@ -1,62 +1,59 @@
 package tests;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.BasePage;
-import pages.HomePage;
-import pages.LoginPage;
 
-import java.time.Duration;
-
-public class TestLogin extends BaseTestPage{
+public class TestLogin extends BaseTest {
 
     @Test
     public void visabilityOfLoginInUrl(){
-        String expectedResult = "https://vue-demo.daniel-avellaneda.com/login";
+        String expectedResult = "/login";
         getHomePage().goToLogInPage();
         String actualResult = getDriver().getCurrentUrl();
-        Assert.assertEquals(actualResult,expectedResult);
+        Assert.assertTrue(actualResult.contains(expectedResult));
     }
 
     @Test
     public void inputType(){
         String expectedResult1 = "email";
         String expectedResult2 = "password";
+
         getHomePage().goToLogInPage();
-        String actualResult1 = getLoginPage().getEmailField().getAttribute("type").toString();
+
+        String actualResult1 = getLoginPage().getEmailField().getAttribute("type");
         Assert.assertEquals(expectedResult1,actualResult1);
-        String actualResult2 = getLoginPage().getPasswordField().getAttribute("type").toString();
+        String actualResult2 = getLoginPage().getPasswordField().getAttribute("type");
         Assert.assertEquals(expectedResult2,actualResult2);
     }
 
     @Test
     public void errorsWhenUserDoesNotExist() throws InterruptedException {
         String expectedResult = "User does not exists";
+        String expectedResult1 = "/login";
+
         getHomePage().goToLogInPage();
         getLoginPage().logInWithFaker();
+
         String actualResult = getLoginPage().getMessageUserDoesNotExist().getText();
         Assert.assertEquals(actualResult,expectedResult);
 
-        String expectedResult1 = "https://vue-demo.daniel-avellaneda.com/login";
         String actualResult1 = getDriver().getCurrentUrl();
-        Assert.assertEquals(actualResult1,expectedResult1);
+        Assert.assertTrue(actualResult1.contains(expectedResult1));
     }
 
     @Test
     public void errorsWithValidEmailInvalidPass(){
         String expectedResult = "Wrong password";
+        String expectedResult1 = "/login";
+
         getHomePage().goToLogInPage();
         getLoginPage().logInWithValidEmailInvalidPass("admin@admin.com");
+
         String actualResult = getLoginPage().getMessageWrongPass().getText();
         Assert.assertEquals(actualResult,expectedResult);
 
-        String expectedResult1 = "https://vue-demo.daniel-avellaneda.com/login";
         String actualResult1 = getDriver().getCurrentUrl();
-        Assert.assertEquals(actualResult1,expectedResult1);
+        Assert.assertTrue(actualResult1.contains(expectedResult1));
     }
 
     @Test
@@ -65,6 +62,7 @@ public class TestLogin extends BaseTestPage{
         getHomePage().goToLogInPage();
         getLoginPage().logInHappyFlow("admin@admin.com","12345");
         Thread.sleep(1000);
+
         String actualResult = getLoginPage().getDriver().getCurrentUrl();
         Assert.assertTrue(actualResult.contains(expectedResult));
         getHomePage().logOut();
