@@ -6,20 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d22373b6-bf6e-4f05-8d2e-f57433402804" name="Changes" comment="New tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/AdminCities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AdminCities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/EditProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/EditProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/Locale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/Locale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/SignUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/SignUpPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTestPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestAdminCities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestAdminCities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestAuthRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestAuthRoutes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestEditProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestEditProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestLocale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestLocale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestSignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/TestSignUp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,13 +34,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="TestNG.TestSignUp.inputType">
+}</component>
+  <component name="RunManager" selected="TestNG.TestEditProfile.editProfile">
     <configuration name="TestEditProfile" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="itbootcamp_final_project" />
       <extension name="coverage">
@@ -143,9 +130,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.TestEditProfile.editProfile" />
         <item itemvalue="TestNG.TestSignUp.inputType" />
         <item itemvalue="TestNG.TestEditProfile" />
-        <item itemvalue="TestNG.TestEditProfile.editProfile" />
         <item itemvalue="TestNG.TestLocale" />
         <item itemvalue="TestNG.TestLogin" />
       </list>
